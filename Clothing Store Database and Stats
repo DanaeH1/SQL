@@ -1,0 +1,36 @@
+-Create Clothing Store Database
+CREATE TABLE clothing (id Integer Primary Key,Item TEXT, Quantity Integer, Price Integer,Aisle Integer);
+
+Insert into clothing VALUES(1,"Hats",5,7,3);
+Insert into clothing VALUES(2,"Shoes",12,10,1);
+Insert into clothing VALUES(3,"Pants",15,30,4);
+Insert into clothing VALUES(4,"Shirts",20,15,5);
+Insert into clothing VALUES(5,"Coats",8,50,2);
+Insert into clothing VALUES(6,"Necklaces",13,10,3);
+Insert into clothing VALUES(7,"Earrings",10,12,3);
+Insert into clothing VALUES(8,"Scarfs",19,5,4);
+Insert into clothing VALUES(9,"Socks",14,7,3);
+Insert into clothing VALUES(10,"Jackets",12,32,2);
+Insert into clothing VALUES(11,"Dresses",30,25,4);
+Insert into clothing VALUES(12,"Glasses",10,8,3);
+Insert into clothing VALUES(13,"Skirts",15,14,4);
+Insert into clothing VALUES(14,"Boots",9,20,1);
+Insert into clothing VALUES(15,"Hoodies",30,27,2);
+
+--Display the data ordered by price
+Select * From clothing order by price;
+
+--Display the data ordered by quantity
+Select * From clothing order by quantity;
+
+--Display the data ordered by aisle
+Select * From clothing order by aisle;
+
+--Display clothing items greater than $15
+Select * From clothing where price > 15;
+
+--Display the sum of all clothing items sold
+Select Sum("price") from clothing;
+
+--The average amount of items sold in each aisle
+Select Avg("quantity") from clothing group by aisle 
